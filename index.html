@@ -3,1095 +3,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Remodelaciones y acabados en Costa Rica. Arquitectura, Ingeniería, Construcción, Renovaciones e Instalaciones. Más de 10 años transformando espacios.">
-<meta name="keywords" content="remodelaciones Costa Rica, construcción Costa Rica, acabados, renovaciones, arquitectura ingeniería, instalaciones, soldadura">
-<title>RenovaCR – Transformamos Espacios en Experiencias de Vida</title>
+<title>Planes de Acceso – Kurus</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --red: #D32F2F;
-    --red-dark: #B71C1C;
-    --red-light: #EF5350;
-    --red-pale: #FFEBEE;
-    --white: #FFFFFF;
-    --off-white: #FAFAF8;
-    --gray-50: #F7F7F5;
-    --gray-100: #EDEDEB;
-    --gray-200: #D4D4D1;
-    --gray-400: #9A9A96;
-    --gray-600: #5C5C59;
-    --gray-800: #2A2A28;
-    --gray-900: #161614;
+    --red: #D32F2F; --red-dark: #B71C1C; --red-pale: #FFEBEE;
+    --white: #FFFFFF; --off-white: #FAFAF8;
+    --gray-50: #F7F7F5; --gray-100: #EDEDEB; --gray-200: #D4D4D1;
+    --gray-400: #9A9A96; --gray-600: #5C5C59; --gray-800: #2A2A28; --gray-900: #161614;
+    --gold: #B8860B; --gold-light: #FFD700;
     --font-display: 'Bebas Neue', sans-serif;
     --font-serif: 'DM Serif Display', serif;
     --font-body: 'DM Sans', sans-serif;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --t: 0.3s cubic-bezier(0.4,0,0.2,1);
   }
-
   html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); background: var(--white); color: var(--gray-800); overflow-x: hidden; }
+  body { font-family: var(--font-body); background: var(--gray-900); color: var(--gray-800); overflow-x: hidden; }
 
-  /* ========== NAV ========== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-100);
-    padding: 0 5%;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-    transition: all var(--transition);
-  }
-  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: 28px; letter-spacing: 2px;
-    color: var(--red);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--gray-800); }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color var(--transition); }
-  .nav-links a:hover { color: var(--red); }
-  .nav-cta {
-    background: var(--red); color: white;
-    padding: 10px 22px; border-radius: 40px;
-    font-size: 13px; font-weight: 600; text-decoration: none;
-    transition: all var(--transition);
-  }
-  .nav-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--gray-800); transition: all var(--transition); }
-
-  /* ========== HERO ========== */
-  #hero {
-    min-height: 100vh;
-    position: relative;
-    display: flex; align-items: center;
-    overflow: hidden;
-    background: var(--gray-900);
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, #0a0a08 0%, #1a1008 40%, #2a0808 100%);
+  /* HERO */
+  .hero {
+    background: var(--gray-900); position: relative;
+    padding: 100px 5% 80px; text-align: center; overflow: hidden;
   }
   .hero-pattern {
-    position: absolute; inset: 0; opacity: 0.04;
-    background-image: repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px),
+    position: absolute; inset: 0; opacity: 0.035;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px),
       repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px);
   }
-  .hero-accent {
-    position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
-    background: linear-gradient(135deg, transparent 30%, rgba(211,47,47,0.15) 100%);
-    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  .hero-accent-bar {
-    position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
-    background: var(--red);
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 120px 5% 80px;
-    max-width: 1200px; width: 100%;
-    margin: 0 auto;
-  }
+  .hero-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--red); }
+  .hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(211,47,47,0.15); border: 1px solid rgba(211,47,47,0.3);
-    color: #FF8A80; padding: 6px 16px; border-radius: 40px;
-    font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
-    margin-bottom: 32px;
-    animation: fadeInUp 0.6s ease both;
+    color: #FF8A80; padding: 6px 18px; border-radius: 40px;
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeInUp 0.5s ease both;
   }
-  .hero-badge::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--red); animation: pulse 2s infinite;
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: blink 1.5s infinite; }
+  .greeting {
+    font-family: var(--font-serif); font-size: clamp(20px, 3vw, 28px);
+    color: rgba(255,255,255,0.55); margin-bottom: 12px;
+    font-style: italic;
+    animation: fadeInUp 0.5s ease 0.1s both;
   }
+  .greeting span { color: #FF8A80; font-style: normal; font-family: var(--font-display); letter-spacing: 3px; font-size: 1.3em; }
   .hero-h1 {
     font-family: var(--font-display);
-    font-size: clamp(52px, 8vw, 110px);
-    line-height: 0.9; letter-spacing: 2px;
-    color: white;
-    animation: fadeInUp 0.7s ease 0.1s both;
+    font-size: clamp(46px, 8vw, 96px);
+    line-height: 0.92; letter-spacing: 3px; color: white;
+    animation: fadeInUp 0.5s ease 0.15s both;
   }
-  .hero-h1 em {
-    color: var(--red); font-style: normal;
-    display: block;
-  }
+  .hero-h1 em { color: var(--red); font-style: normal; display: block; }
   .hero-sub {
-    font-size: clamp(16px, 2vw, 19px); font-weight: 300; color: rgba(255,255,255,0.65);
-    max-width: 520px; line-height: 1.7; margin-top: 24px;
-    animation: fadeInUp 0.7s ease 0.2s both;
+    font-size: clamp(15px, 2vw, 18px); font-weight: 300;
+    color: rgba(255,255,255,0.55); max-width: 560px; margin: 24px auto 0; line-height: 1.75;
+    animation: fadeInUp 0.5s ease 0.2s both;
   }
-  .hero-actions {
-    display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px;
-    animation: fadeInUp 0.7s ease 0.3s both;
-  }
-  .btn-primary {
-    background: var(--red); color: white;
-    padding: 16px 32px; border-radius: 4px;
-    font-size: 15px; font-weight: 600; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 8px;
-    transition: all var(--transition);
-    border: 2px solid var(--red);
-  }
-  .btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(211,47,47,0.35); }
-  .btn-wa {
-    background: #25D366; color: white;
-    padding: 16px 32px; border-radius: 4px;
-    font-size: 15px; font-weight: 600; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 10px;
-    transition: all var(--transition);
-    border: 2px solid #25D366;
-  }
-  .btn-wa:hover { background: #1ebe5d; border-color: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
-  .btn-outline {
-    background: transparent; color: white;
-    padding: 16px 32px; border-radius: 4px;
-    font-size: 15px; font-weight: 500; text-decoration: none;
-    display: inline-flex; align-items: center; gap: 8px;
-    border: 1.5px solid rgba(255,255,255,0.3);
-    transition: all var(--transition);
-  }
-  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.05); }
-  .hero-stats {
-    display: flex; gap: 40px; margin-top: 64px;
-    animation: fadeInUp 0.7s ease 0.4s both;
-  }
-  .hero-stat { border-left: 2px solid var(--red); padding-left: 16px; }
-  .hero-stat-n { font-family: var(--font-display); font-size: 40px; color: white; line-height: 1; letter-spacing: 1px; }
-  .hero-stat-l { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
-  .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 2; text-align: center; }
-  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent); margin: 0 auto; animation: scrollDown 1.5s ease-in-out infinite; }
+  .hero-sub strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+  .hero-divider { width: 48px; height: 3px; background: var(--red); margin: 40px auto 0; animation: fadeInUp 0.5s ease 0.25s both; }
 
-  /* ========== HEADLINES SLIDER ========== */
-  #headlines {
-    background: var(--gray-50);
-    padding: 80px 5%;
-    overflow: hidden;
+  /* PLANES SECTION */
+  .planes-section {
+    background: var(--off-white);
+    padding: 80px 5% 100px;
   }
-  .headlines-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-  .hl-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 24px; }
-  .hl-slider { position: relative; height: 80px; overflow: hidden; }
-  .hl-slide {
-    position: absolute; top: 0; left: 0; right: 0;
-    font-family: var(--font-serif); font-size: clamp(22px, 3.5vw, 36px);
-    color: var(--gray-800); line-height: 1.3;
-    opacity: 0; transition: all 0.6s cubic-bezier(0.4,0,0.2,1);
-    transform: translateY(20px);
+  .planes-label {
+    text-align: center; font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 12px;
   }
-  .hl-slide.active { opacity: 1; transform: translateY(0); }
-  .hl-cta-box { margin-top: 48px; }
-  .hl-question {
-    font-size: 18px; color: var(--gray-600); font-weight: 300;
-    min-height: 28px; transition: all 0.4s ease;
-    margin-bottom: 24px;
+  .planes-title {
+    font-family: var(--font-serif); font-size: clamp(28px, 4vw, 44px);
+    color: var(--gray-900); text-align: center; line-height: 1.2; margin-bottom: 8px;
   }
-  .hl-cta-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--red); color: white;
-    padding: 14px 36px; border-radius: 4px;
-    font-size: 15px; font-weight: 600; text-decoration: none;
-    transition: all var(--transition);
+  .planes-sub {
+    text-align: center; font-size: 15px; color: var(--gray-600); margin-bottom: 56px; font-weight: 300;
   }
-  .hl-cta-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
-  .hl-dots { display: flex; gap: 8px; justify-content: center; margin-top: 32px; }
-  .hl-dot { width: 24px; height: 3px; border-radius: 2px; background: var(--gray-200); transition: all var(--transition); cursor: pointer; }
-  .hl-dot.active { background: var(--red); width: 40px; }
 
-  /* ========== NOSOTROS ========== */
-  #nosotros {
-    padding: 100px 5%;
-    background: white;
+  /* GRID */
+  .planes-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; max-width: 1100px; margin: 0 auto;
+    border: 1.5px solid var(--gray-200); border-radius: 4px; overflow: hidden;
   }
-  .section-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red); font-weight: 600; margin-bottom: 16px; }
-  .section-title { font-family: var(--font-serif); font-size: clamp(32px, 4vw, 52px); color: var(--gray-900); line-height: 1.15; }
-  .nosotros-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
-  .nosotros-img {
-    position: relative;
-  }
-  .nosotros-img-box {
-    background: var(--gray-100);
-    height: 480px;
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .nos-img-placeholder {
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, #1a1a16 0%, #2d1515 50%, #1a1a16 100%);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-display); font-size: 80px; color: rgba(211,47,47,0.2);
-    letter-spacing: 4px;
-  }
-  .nosotros-badge-box {
-    position: absolute; bottom: -24px; right: -24px;
-    background: var(--red); color: white;
-    width: 120px; height: 120px; border-radius: 50%;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center;
-  }
-  .nosotros-badge-n { font-family: var(--font-display); font-size: 42px; line-height: 1; }
-  .nosotros-badge-l { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.9; }
-  .nosotros-text p { font-size: 17px; line-height: 1.85; color: var(--gray-600); margin-bottom: 20px; }
-  .nosotros-text p strong { color: var(--gray-900); font-weight: 600; }
-  .valores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
-  .valor-card {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-100);
-    padding: 20px 16px; border-radius: 2px; text-align: center;
-    transition: all var(--transition);
-  }
-  .valor-card:hover { border-color: var(--red); transform: translateY(-4px); }
-  .valor-icon { font-size: 28px; margin-bottom: 8px; }
-  .valor-name { font-size: 13px; font-weight: 600; color: var(--gray-800); text-transform: uppercase; letter-spacing: 1px; }
 
-  /* ========== SERVICIOS ========== */
-  #servicios {
-    padding: 100px 5%;
+  /* CARD BASE */
+  .plan-card {
+    background: white; padding: 44px 36px 40px;
+    display: flex; flex-direction: column;
+    border-right: 1.5px solid var(--gray-200);
+    position: relative; transition: all var(--t);
+  }
+  .plan-card:last-child { border-right: none; }
+  .plan-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.12); z-index: 2; }
+
+  /* PLAN DESTACADO (centro) */
+  .plan-card.featured {
     background: var(--gray-900);
+    border-right: 1.5px solid rgba(255,255,255,0.06);
+    transform: translateY(-12px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    z-index: 3;
   }
-  #servicios .section-tag { color: #FF8A80; }
-  #servicios .section-title { color: white; }
-  .servicios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; max-width: 1200px; margin-left: auto; margin-right: auto; }
-  .servicio-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    padding: 40px 32px;
-    transition: all var(--transition);
-    cursor: default;
-    position: relative; overflow: hidden;
-  }
-  .servicio-card::before {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: var(--red);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform var(--transition);
-  }
-  .servicio-card:hover { background: rgba(211,47,47,0.08); border-color: rgba(211,47,47,0.2); }
-  .servicio-card:hover::before { transform: scaleX(1); }
-  .servicio-num {
-    font-family: var(--font-display); font-size: 48px;
-    color: rgba(255,255,255,0.04); line-height: 1;
-    margin-bottom: -12px; letter-spacing: 2px;
-  }
-  .servicio-icon-box {
-    width: 52px; height: 52px;
-    background: rgba(211,47,47,0.12); border-radius: 4px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 20px; font-size: 24px;
-    transition: all var(--transition);
-  }
-  .servicio-card:hover .servicio-icon-box { background: var(--red); }
-  .servicio-name { font-size: 18px; font-weight: 600; color: white; margin-bottom: 12px; }
-  .servicio-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+  .plan-card.featured:hover { transform: translateY(-18px); }
 
-  /* ========== PROCESO ========== */
-  #proceso {
-    padding: 100px 5%;
-    background: white;
-  }
-  .proceso-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 56px; max-width: 1200px; margin-left: auto; margin-right: auto; position: relative; }
-  .proceso-steps::before {
-    content: '';
-    position: absolute; top: 28px; left: 8%; right: 8%; height: 1px;
-    background: linear-gradient(to right, var(--red) 0%, var(--red) 100%);
-    opacity: 0.2;
-  }
-  .paso { text-align: center; padding: 0 24px; }
-  .paso-num {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: white; border: 2px solid var(--red);
-    font-family: var(--font-display); font-size: 22px; color: var(--red);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 24px; letter-spacing: 1px;
-    position: relative; z-index: 1;
-    transition: all var(--transition);
-  }
-  .paso:hover .paso-num { background: var(--red); color: white; }
-  .paso-title { font-size: 16px; font-weight: 600; color: var(--gray-800); margin-bottom: 8px; }
-  .paso-desc { font-size: 13px; color: var(--gray-400); line-height: 1.6; }
-
-  /* ========== TESTIMONIOS ========== */
-  #testimonios {
-    padding: 100px 5%;
-    background: var(--gray-50);
-  }
-  .testimonios-slider { max-width: 1200px; margin: 56px auto 0; position: relative; overflow: hidden; }
-  .testimonios-track { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
-  .testimonio-card {
-    min-width: calc(33.333% - 16px);
-    margin-right: 24px;
-    background: white; border: 1px solid var(--gray-100);
-    padding: 36px 32px; border-radius: 2px;
-    position: relative;
-  }
-  .testimonio-quote { font-size: 48px; font-family: var(--font-serif); color: var(--red); line-height: 0.5; margin-bottom: 20px; }
-  .testimonio-text { font-size: 16px; color: var(--gray-600); line-height: 1.7; font-style: italic; margin-bottom: 28px; }
-  .testimonio-author { display: flex; align-items: center; gap: 12px; }
-  .testi-avatar {
-    width: 44px; height: 44px; border-radius: 50%;
+  .plan-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
     background: var(--red); color: white;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 15px; font-weight: 600;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 40px; white-space: nowrap;
   }
-  .testi-name { font-size: 14px; font-weight: 600; color: var(--gray-800); }
-  .testi-stars { color: #FFA726; font-size: 13px; margin-top: 2px; }
-  .slider-controls { display: flex; gap: 12px; justify-content: center; margin-top: 40px; }
-  .slider-btn {
-    width: 44px; height: 44px; border-radius: 50%;
-    border: 1.5px solid var(--gray-200); background: white;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 18px; color: var(--gray-600);
-    transition: all var(--transition);
+  .plan-badge.gold {
+    background: #1a1a00;
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
   }
-  .slider-btn:hover { border-color: var(--red); color: var(--red); }
 
-  /* ========== EMERGENCIAS ========== */
-  #emergencias {
-    padding: 80px 5%;
-    background: var(--red);
-    position: relative; overflow: hidden;
+  /* PLAN NÚMERO */
+  .plan-num {
+    font-family: var(--font-display); font-size: 13px; letter-spacing: 3px;
+    color: var(--gray-400); text-transform: uppercase; margin-bottom: 20px;
   }
-  .emerg-pattern {
-    position: absolute; inset: 0; opacity: 0.06;
-    background-image: repeating-linear-gradient(45deg, white 0px, white 1px, transparent 0px, transparent 50%);
+  .plan-card.featured .plan-num { color: rgba(255,255,255,0.3); }
+
+  /* NOMBRE DEL PLAN */
+  .plan-name {
+    font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 36px);
+    letter-spacing: 2px; color: var(--gray-900); line-height: 1.05; margin-bottom: 6px;
+  }
+  .plan-card.featured .plan-name { color: white; }
+
+  .plan-tagline {
+    font-size: 13px; color: var(--gray-400); margin-bottom: 28px; line-height: 1.5;
+  }
+  .plan-card.featured .plan-tagline { color: rgba(255,255,255,0.45); }
+
+  /* PRECIO */
+  .plan-price-box { margin-bottom: 32px; border-top: 1px solid var(--gray-100); padding-top: 28px; }
+  .plan-card.featured .plan-price-box { border-top-color: rgba(255,255,255,0.08); }
+  .plan-price-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-400); margin-bottom: 8px; }
+  .plan-card.featured .plan-price-label { color: rgba(255,255,255,0.35); }
+  .plan-price {
+    font-family: var(--font-display); font-size: clamp(38px, 5vw, 54px);
+    color: var(--red); line-height: 1; letter-spacing: 1px;
+  }
+  .plan-price-unit { font-size: 14px; color: var(--gray-400); font-weight: 400; margin-top: 4px; }
+  .plan-card.featured .plan-price-unit { color: rgba(255,255,255,0.4); }
+
+  /* IPHONE visual */
+  .iphone-visual {
+    margin: 0 auto 20px;
+    width: 100px; height: 180px; position: relative;
+  }
+  .iphone-frame {
+    width: 100%; height: 100%;
+    background: #1a1a1a;
+    border-radius: 22px;
+    border: 2.5px solid #3a3a3a;
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .iphone-screen {
+    width: 86%; height: 88%;
+    background: linear-gradient(160deg, #1e3a5f 0%, #0d1b2a 40%, #1a0808 100%);
+    border-radius: 16px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 6px;
+  }
+  .iphone-screen-icon { font-size: 28px; }
+  .iphone-screen-text { font-size: 9px; color: rgba(255,255,255,0.7); letter-spacing: 1px; text-transform: uppercase; font-family: var(--font-body); }
+  .iphone-button {
+    position: absolute; right: -4px; top: 40%;
+    width: 3px; height: 28px; background: #3a3a3a; border-radius: 2px;
+  }
+  .iphone-sidebtns {
+    position: absolute; left: -4px; top: 30%;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .iphone-sidebtn { width: 3px; height: 18px; background: #3a3a3a; border-radius: 2px; }
+  .iphone-notch {
+    position: absolute; top: 5px; left: 50%; transform: translateX(-50%);
+    width: 28px; height: 6px; background: #1a1a1a; border-radius: 10px; z-index: 2;
+  }
+  .iphone-label {
+    text-align: center; margin-top: 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--gray-600);
+  }
+  .iphone-unlock {
+    text-align: center; font-size: 10px; color: var(--red);
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    background: var(--red-pale); padding: 3px 10px; border-radius: 40px;
+    display: inline-block; margin: 4px auto 0;
+  }
+
+  /* FEATURES */
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; flex: 1; }
+  .plan-features li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 14px; color: var(--gray-600); line-height: 1.5;
+  }
+  .plan-card.featured .plan-features li { color: rgba(255,255,255,0.6); }
+  .feat-check {
+    width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;
+    background: var(--red-pale); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .plan-card.featured .feat-check { background: rgba(211,47,47,0.2); }
+  .feat-check svg { width: 10px; height: 10px; }
+
+  /* CTA BUTTON */
+  .plan-cta {
+    display: block; width: 100%; padding: 15px;
+    background: var(--gray-100); border: 1.5px solid var(--gray-200);
+    color: var(--gray-800); font-family: var(--font-body);
+    font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
+    text-align: center; text-decoration: none; text-transform: uppercase;
+    border-radius: 2px; cursor: pointer;
+    transition: all var(--t); margin-top: auto;
+  }
+  .plan-cta:hover { background: var(--gray-800); color: white; border-color: var(--gray-800); transform: translateY(-2px); }
+  .plan-cta.red { background: var(--red); border-color: var(--red); color: white; }
+  .plan-cta.red:hover { background: var(--red-dark); border-color: var(--red-dark); box-shadow: 0 8px 24px rgba(211,47,47,0.4); }
+
+  /* URGENCIA BANNER */
+  .urgencia {
+    background: var(--gray-900); position: relative; overflow: hidden;
+    padding: 56px 5%; text-align: center;
+  }
+  .urgencia-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: repeating-linear-gradient(45deg, white 0px, white 1px, transparent 0, transparent 50%);
     background-size: 20px 20px;
   }
-  .emerg-inner { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-  .emerg-icon { font-size: 52px; margin-bottom: 16px; }
-  .emerg-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 72px); color: white; letter-spacing: 2px; line-height: 1; margin-bottom: 16px; }
-  .emerg-sub { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 40px; font-weight: 300; }
-  .emerg-tel {
-    display: inline-flex; align-items: center; gap: 16px;
-    background: white; color: var(--red);
-    padding: 20px 40px; border-radius: 4px;
-    font-size: 22px; font-weight: 700; text-decoration: none;
-    transition: all var(--transition);
-    letter-spacing: 1px;
+  .urgencia-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+  .urgencia-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #FF8A80; font-weight: 600; margin-bottom: 16px; }
+  .urgencia-title {
+    font-family: var(--font-display); font-size: clamp(28px, 5vw, 56px);
+    color: white; letter-spacing: 3px; line-height: 1; margin-bottom: 16px;
   }
-  .emerg-tel:hover { transform: scale(1.04); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
-
-  /* ========== CONTACTO ========== */
-  #contacto {
-    padding: 100px 5%;
-    background: white;
-  }
-  .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 56px auto 0; align-items: start; }
-  .contacto-info-title { font-family: var(--font-serif); font-size: 28px; color: var(--gray-900); margin-bottom: 16px; }
-  .contacto-info p { font-size: 15px; color: var(--gray-600); line-height: 1.7; margin-bottom: 32px; }
-  .contacto-items { display: flex; flex-direction: column; gap: 20px; }
-  .contacto-item { display: flex; gap: 16px; align-items: center; }
-  .ci-icon { width: 44px; height: 44px; border-radius: 4px; background: var(--red-pale); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-  .ci-label { font-size: 11px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; }
-  .ci-val { font-size: 15px; font-weight: 500; color: var(--gray-800); }
-  .contact-form { display: flex; flex-direction: column; gap: 16px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label { font-size: 12px; font-weight: 600; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; }
-  .form-group input, .form-group textarea, .form-group select {
-    padding: 14px 16px; border: 1.5px solid var(--gray-100);
-    border-radius: 2px; font-size: 15px; font-family: var(--font-body);
-    color: var(--gray-800); background: var(--gray-50);
-    transition: border-color var(--transition);
-    outline: none;
-  }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--red); background: white; }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-submit {
+  .urgencia-title em { color: var(--red); font-style: normal; }
+  .urgencia-sub { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 36px; font-weight: 300; line-height: 1.7; }
+  .urgencia-cta {
+    display: inline-flex; align-items: center; gap: 10px;
     background: var(--red); color: white;
-    padding: 16px; border-radius: 2px;
-    font-size: 15px; font-weight: 600; border: none; cursor: pointer;
-    font-family: var(--font-body);
-    transition: all var(--transition);
-    letter-spacing: 0.5px;
+    padding: 18px 44px; border-radius: 2px;
+    font-size: 16px; font-weight: 700; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 1px;
+    transition: all var(--t);
   }
-  .form-submit:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(211,47,47,0.3); }
+  .urgencia-cta:hover { background: var(--red-dark); transform: translateY(-3px); box-shadow: 0 10px 32px rgba(211,47,47,0.4); }
 
-  /* ========== DUDAS ========== */
-  #dudas {
-    padding: 64px 5%;
-    background: var(--gray-50);
-    text-align: center;
-  }
-  #dudas p { font-size: 18px; color: var(--gray-600); margin-bottom: 24px; }
+  /* KEYFRAMES */
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-  /* ========== FOOTER ========== */
-  footer {
-    background: var(--gray-900);
-    color: rgba(255,255,255,0.6);
-    padding: 80px 5% 40px;
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .planes-grid { grid-template-columns: 1fr; border: none; gap: 20px; }
+    .plan-card { border-right: none; border: 1.5px solid var(--gray-200); border-radius: 4px; }
+    .plan-card.featured { transform: none; border: 2px solid var(--red); }
+    .plan-card.featured:hover { transform: translateY(-4px); }
   }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; max-width: 1200px; margin: 0 auto 64px; }
-  .footer-logo { font-family: var(--font-display); font-size: 32px; color: white; letter-spacing: 2px; margin-bottom: 16px; }
-  .footer-logo span { color: var(--red); }
-  .footer-desc { font-size: 14px; line-height: 1.7; max-width: 280px; }
-  .footer-col h4 { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: white; font-weight: 600; margin-bottom: 20px; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
-  .footer-col ul li a:hover { color: var(--red); }
-  .footer-social { display: flex; gap: 12px; margin-top: 24px; }
-  .footer-soc-btn {
-    width: 40px; height: 40px; border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none; font-size: 16px; color: rgba(255,255,255,0.5);
-    transition: all var(--transition);
+  @media (max-width: 600px) {
+    .plan-card { padding: 36px 24px 32px; }
   }
-  .footer-soc-btn:hover { border-color: var(--red); color: var(--red); background: rgba(211,47,47,0.08); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 32px; max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center;
-    font-size: 13px;
-  }
-  .footer-bottom-logo { font-family: var(--font-display); font-size: 20px; color: rgba(255,255,255,0.3); letter-spacing: 2px; }
-
-  /* ========== FLOTANTES ========== */
-  .float-container {
-    position: fixed; right: 24px; bottom: 24px; z-index: 200;
-    display: flex; flex-direction: column; gap: 12px; align-items: center;
-  }
-  .float-toggle {
-    width: 56px; height: 56px; border-radius: 50%;
-    background: var(--red); color: white;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 22px;
-    box-shadow: 0 4px 20px rgba(211,47,47,0.4);
-    transition: all var(--transition);
-    border: none;
-    animation: pulse 3s infinite;
-  }
-  .float-toggle:hover { transform: scale(1.1); }
-  .float-menu {
-    display: flex; flex-direction: column; gap: 10px; align-items: center;
-    transform-origin: bottom;
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-    opacity: 0; transform: scaleY(0) translateY(20px); pointer-events: none;
-  }
-  .float-menu.open { opacity: 1; transform: scaleY(1) translateY(0); pointer-events: all; }
-  .float-btn {
-    width: 48px; height: 48px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none; font-size: 20px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    transition: all var(--transition);
-    position: relative;
-  }
-  .float-btn:hover { transform: scale(1.1); }
-  .float-btn::before {
-    content: attr(data-label);
-    position: absolute; right: 56px;
-    background: var(--gray-900); color: white;
-    font-size: 12px; font-family: var(--font-body);
-    padding: 4px 10px; border-radius: 4px; white-space: nowrap;
-    opacity: 0; transition: opacity 0.2s;
-    pointer-events: none;
-  }
-  .float-btn:hover::before { opacity: 1; }
-  .float-wa { background: #25D366; }
-  .float-call { background: var(--red); }
-  .float-ig { background: #E1306C; }
-  .float-fb { background: #1877F2; }
-  .float-tk { background: #000; border: 1px solid rgba(255,255,255,0.2); }
-
-  /* ========== ANIMACIONES ========== */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(211,47,47,0.4); }
-    50% { box-shadow: 0 0 0 10px rgba(211,47,47,0); }
-  }
-  @keyframes scrollDown {
-    0%, 100% { opacity: 0.3; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.2); }
-  }
-  .reveal {
-    opacity: 0; transform: translateY(32px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-
-  /* ========== RESPONSIVE ========== */
-  @media (max-width: 1024px) {
-    .nosotros-grid { grid-template-columns: 1fr; gap: 48px; }
-    .nosotros-img { order: -1; }
-    .servicios-grid { grid-template-columns: repeat(2, 1fr); }
-    .proceso-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-    .proceso-steps::before { display: none; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  }
-  @media (max-width: 768px) {
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    .hero-stats { gap: 24px; flex-wrap: wrap; }
-    .servicios-grid { grid-template-columns: 1fr; }
-    .testimonios-track .testimonio-card { min-width: 100%; margin-right: 0; }
-    .contacto-grid { grid-template-columns: 1fr; gap: 48px; }
-    .form-row { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-    .valores-grid { grid-template-columns: 1fr 1fr; }
-    .nosotros-badge-box { display: none; }
-  }
-
-  /* Nav mobile */
-  .mobile-menu {
-    position: fixed; inset: 0; background: white; z-index: 150;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
-    transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-  }
-  .mobile-menu.open { transform: translateX(0); }
-  .mobile-menu a { font-size: 24px; font-weight: 300; color: var(--gray-800); text-decoration: none; }
-  .mobile-menu-close { position: absolute; top: 24px; right: 24px; font-size: 28px; cursor: pointer; color: var(--gray-600); background: none; border: none; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">REMODELACIONES COMERCIALES INDUSTRIALES <span>COSTA RICA</span></a>
-  <ul class="nav-links">
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#testimonios">Testimonios</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <a href="#contacto" class="nav-cta">Solicitar cotización</a>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" id="menuClose">✕</button>
-  <a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a>
-  <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
-  <a href="#testimonios" onclick="closeMobileMenu()">Testimonios</a>
-  <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
-  <a href="#contacto" class="btn-primary" onclick="closeMobileMenu()">Solicitar cotización</a>
-</div>
-
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
+<section class="hero">
+  <div class="hero-bar"></div>
   <div class="hero-pattern"></div>
-  <div class="hero-accent"></div>
-  <div class="hero-accent-bar"></div>
   <div class="hero-content">
-    <div class="hero-badge">Costa Rica · Desde 2015</div>
+    <div class="hero-badge">Acceso exclusivo disponible ahora</div>
+    <p class="greeting">Hola, <span>KURUS</span></p>
     <h1 class="hero-h1">
-      TRANSFORMAMOS<br>
-      <em>ESPACIOS</em><br>
-      EN EXPERIENCIAS
+      ¿YA ESTÁS<br>
+      <em>LISTO</em><br>
+      PARA GANAR?
     </h1>
-    <p class="hero-sub">Remodelaciones, construcción y acabados premium para hogares y negocios. Calidad, cumplimiento y confianza en cada proyecto.</p>
-    <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        Solicitar cotización
-      </a>
-      <a href="https://wa.me/50663023487?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="btn-wa" target="_blank">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Hablar por WhatsApp
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-n">10+</div>
-        <div class="hero-stat-l">Años de experiencia</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-n">500+</div>
-        <div class="hero-stat-l">Proyectos completados</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-n">100%</div>
-        <div class="hero-stat-l">Clientes satisfechos</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
+    <p class="hero-sub">
+      Si deseas tener acceso a tu página y empezar a generar
+      <strong>millones de colones</strong>, estos son los planes que tengo para ti.
+      El dinero no espera — ¿y tú sí?
+    </p>
+    <div class="hero-divider"></div>
   </div>
 </section>
 
-<!-- HEADLINES SLIDER -->
-<section id="headlines">
-  <div class="headlines-inner">
-    <div class="hl-label">Especialistas en Costa Rica</div>
-    <div class="hl-slider" id="hlSlider">
-      <div class="hl-slide active">Remodelaciones en Costa Rica con acabados de alta calidad</div>
-      <div class="hl-slide">Expertos en construcción y diseño de espacios modernos</div>
-      <div class="hl-slide">Renovaciones integrales para hogar y negocios</div>
-      <div class="hl-slide">Arquitectura e ingeniería con soluciones inteligentes</div>
-      <div class="hl-slide">Instalaciones profesionales seguras y eficientes</div>
-      <div class="hl-slide">Soldadura especializada para proyectos industriales</div>
-      <div class="hl-slide">Acabados premium que aumentan el valor de tu propiedad</div>
-    </div>
-    <div class="hl-dots" id="hlDots">
-      <div class="hl-dot active"></div>
-      <div class="hl-dot"></div>
-      <div class="hl-dot"></div>
-      <div class="hl-dot"></div>
-      <div class="hl-dot"></div>
-      <div class="hl-dot"></div>
-      <div class="hl-dot"></div>
-    </div>
-    <div class="hl-cta-box">
-      <div class="hl-question" id="hlQuestion">¿Tu espacio necesita una transformación urgente?</div>
-      <a href="#contacto" class="hl-cta-btn">
-        Cotiza ahora
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
+<!-- PLANES -->
+<section class="planes-section">
+  <div class="planes-label">Elige tu arma</div>
+  <h2 class="planes-title">Tres formas de entrar al juego</h2>
+  <p class="planes-sub">Sin excusas. Sin rodeos. Escoge tu plan y empieza hoy.</p>
 
-<!-- NOSOTROS -->
-<section id="nosotros">
-  <div class="nosotros-grid">
-    <div class="nosotros-img reveal">
-      <div class="nosotros-img-box">
-        <div class="nos-img-placeholder">CR</div>
-      </div>
-      <div class="nosotros-badge-box">
-        <div class="nosotros-badge-n">10</div>
-        <div class="nosotros-badge-l">Años</div>
-      </div>
-    </div>
-    <div class="nosotros-text reveal reveal-delay-1">
-      <div class="section-tag">Quiénes somos</div>
-      <h2 class="section-title">Construimos confianza,<br>no solo espacios</h2>
-      <br>
-      <p>Somos una empresa que nace en 2015 con el <strong>deseo firme de salir adelante</strong>. Ante cada desafío encontramos una solución. Nos apasiona servir, hacer las cosas bien y cumplir lo que prometemos.</p>
-      <p>Para nosotros, <strong>la palabra tiene valor</strong>. Cada proyecto que tomamos es una promesa que cumplimos con trabajo, dedicación y los mejores materiales del mercado.</p>
-      <p>Trabajamos con hogares y empresas de todo Costa Rica, desde remodelaciones íntimas hasta proyectos de construcción de gran escala.</p>
-      <div class="valores-grid">
-        <div class="valor-card">
-          <div class="valor-icon">🤝</div>
-          <div class="valor-name">Confianza</div>
-        </div>
-        <div class="valor-card">
-          <div class="valor-icon">⭐</div>
-          <div class="valor-name">Calidad</div>
-        </div>
-        <div class="valor-card">
-          <div class="valor-icon">✅</div>
-          <div class="valor-name">Compromiso</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="planes-grid">
 
-<!-- SERVICIOS -->
-<section id="servicios">
-  <div style="max-width:1200px; margin: 0 auto;">
-    <div class="section-tag reveal">Nuestros servicios</div>
-    <h2 class="section-title reveal reveal-delay-1">Soluciones integrales<br>para cada proyecto</h2>
-  </div>
-  <div class="servicios-grid reveal reveal-delay-2">
-    <div class="servicio-card">
-      <div class="servicio-num">01</div>
-      <div class="servicio-icon-box">🏗️</div>
-      <div class="servicio-name">Arquitectura e Ingeniería</div>
-      <div class="servicio-desc">Diseño y planificación profesional para proyectos residenciales y comerciales. Planos, cálculo estructural y gestión de permisos.</div>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-num">02</div>
-      <div class="servicio-icon-box">🏠</div>
-      <div class="servicio-name">Construcción</div>
-      <div class="servicio-desc">Construcción de obra nueva con materiales de primera calidad. Desde la cimentación hasta los acabados finales.</div>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-num">03</div>
-      <div class="servicio-icon-box">🔨</div>
-      <div class="servicio-name">Remodelaciones</div>
-      <div class="servicio-desc">Transformamos espacios existentes con diseños modernos. Cocinas, baños, salas y espacios comerciales a tu medida.</div>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-num">04</div>
-      <div class="servicio-icon-box">🔄</div>
-      <div class="servicio-name">Renovaciones</div>
-      <div class="servicio-desc">Dale nueva vida a tu propiedad. Reparaciones, mejoras y actualizaciones que aumentan el valor de tu inmueble.</div>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-num">05</div>
-      <div class="servicio-icon-box">⚡</div>
-      <div class="servicio-name">Instalaciones</div>
-      <div class="servicio-desc">Instalaciones eléctricas, hidráulicas, sanitarias y de telecomunicaciones con altos estándares de seguridad.</div>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-num">06</div>
-      <div class="servicio-icon-box">🔧</div>
-      <div class="servicio-name">Soldadura</div>
-      <div class="servicio-desc">Trabajos de soldadura especializados para estructuras metálicas, portones, rejas y proyectos industriales.</div>
-    </div>
-  </div>
-</section>
+    <!-- PLAN 1: iPhone -->
+    <div class="plan-card">
+      <div class="plan-num">Plan 01</div>
 
-<!-- PROCESO -->
-<section id="proceso">
-  <div style="max-width:1200px; margin: 0 auto; text-align: center;">
-    <div class="section-tag reveal">¿Cómo trabajamos?</div>
-    <h2 class="section-title reveal reveal-delay-1">Tu proyecto en 4 pasos simples</h2>
-  </div>
-  <div class="proceso-steps">
-    <div class="paso reveal">
-      <div class="paso-num">01</div>
-      <div class="paso-title">Contacto inicial</div>
-      <div class="paso-desc">Nos cuentas tu proyecto. Coordinamos una visita sin costo ni compromiso.</div>
-    </div>
-    <div class="paso reveal reveal-delay-1">
-      <div class="paso-num">02</div>
-      <div class="paso-title">Diagnóstico y propuesta</div>
-      <div class="paso-desc">Evaluamos el espacio y preparamos una cotización detallada y transparente.</div>
-    </div>
-    <div class="paso reveal reveal-delay-2">
-      <div class="paso-num">03</div>
-      <div class="paso-title">Ejecución del proyecto</div>
-      <div class="paso-desc">Trabajamos con precisión, respetando tiempos y presupuesto acordados.</div>
-    </div>
-    <div class="paso reveal reveal-delay-3">
-      <div class="paso-num">04</div>
-      <div class="paso-title">Entrega y seguimiento</div>
-      <div class="paso-desc">Entregamos con garantía y hacemos seguimiento post-entrega de tu satisfacción.</div>
-    </div>
-  </div>
-</section>
+      <div style="text-align:center; margin-bottom: 4px;">
+        <div class="iphone-visual">
+          <div class="iphone-frame">
+            <div class="iphone-notch"></div>
+            <div class="iphone-screen">
+              <div class="iphone-screen-icon">📲</div>
+              <div class="iphone-screen-text">Kurus</div>
+            </div>
+            <div class="iphone-button"></div>
+            <div class="iphone-sidebtns">
+              <div class="iphone-sidebtn"></div>
+              <div class="iphone-sidebtn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="iphone-label">iPhone 16 Plus</div>
+        <div class="iphone-unlock">★ DESBLOQUEADO ★</div>
+      </div>
 
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <div style="max-width:1200px; margin: 0 auto; text-align: center;">
-    <div class="section-tag reveal">Testimonios</div>
-    <h2 class="section-title reveal reveal-delay-1">Lo que dicen nuestros clientes</h2>
-  </div>
-  <div class="testimonios-slider reveal reveal-delay-2">
-    <div class="testimonios-track" id="testiTrack">
-      <div class="testimonio-card">
-        <div class="testimonio-quote">"</div>
-        <p class="testimonio-text">Excelente servicio, súper responsables y el acabado final fue mejor de lo que esperaba. Renovaron mi cocina en tiempo récord.</p>
-        <div class="testimonio-author">
-          <div class="testi-avatar">PS</div>
-          <div>
-            <div class="testi-name">Pey Sanchez</div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio-card">
-        <div class="testimonio-quote">"</div>
-        <p class="testimonio-text">Profesionales de verdad. Cumplieron tiempos y la calidad fue impecable. Mi oficina quedó increíble.</p>
-        <div class="testimonio-author">
-          <div class="testi-avatar" style="background:#1565C0">AW</div>
-          <div>
-            <div class="testi-name">Astra Williams</div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio-card">
-        <div class="testimonio-quote">"</div>
-        <p class="testimonio-text">Mi negocio cambió completamente gracias a su trabajo. La remodelación fue exactamente lo que necesitaba. 100% recomendados.</p>
-        <div class="testimonio-author">
-          <div class="testi-avatar" style="background:#2E7D32">OW</div>
-          <div>
-            <div class="testi-name">Olman Watson</div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio-card">
-        <div class="testimonio-quote">"</div>
-        <p class="testimonio-text">Se nota la experiencia y el compromiso en cada detalle. Volvería a contratarlos sin duda. Quedé muy satisfecho.</p>
-        <div class="testimonio-author">
-          <div class="testi-avatar" style="background:#E65100">CO</div>
-          <div>
-            <div class="testi-name">Carlos Orozco</div>
-            <div class="testi-stars">★★★★★</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-controls">
-    <button class="slider-btn" id="testiPrev">←</button>
-    <button class="slider-btn" id="testiNext">→</button>
-  </div>
-</section>
+      <div class="plan-name" style="text-align:center; margin-top: 20px;">EL TRUEQUE</div>
+      <div class="plan-tagline" style="text-align:center;">Paga con tu iPhone 16 Plus desbloqueado y accede de por vida</div>
 
-<!-- EMERGENCIAS -->
-<section id="emergencias">
-  <div class="emerg-pattern"></div>
-  <div class="emerg-inner">
-    <div class="emerg-icon">⚡</div>
-    <h2 class="emerg-title">¿EMERGENCIA ELÉCTRICA<br>O REPARACIÓN URGENTE?</h2>
-    <p class="emerg-sub">Atendemos urgencias 24/7. No dejes que un problema pequeño se convierta en uno grande.</p>
-    <a href="tel:+50663023487" class="emerg-tel">
-      <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      Llamar ahora · (506) 1234-5678
-    </a>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto">
-  <div style="max-width:1200px; margin: 0 auto;">
-    <div class="section-tag reveal">Contacto</div>
-    <h2 class="section-title reveal reveal-delay-1">Hablemos de tu proyecto</h2>
-  </div>
-  <div class="contacto-grid">
-    <div class="contacto-info reveal">
-      <h3 class="contacto-info-title">Estamos para servirte</h3>
-      <p>Cuéntanos tu proyecto y te damos una cotización personalizada sin costo ni compromiso. Atendemos toda Costa Rica.</p>
-      <div class="contacto-items">
-        <div class="contacto-item">
-          <div class="ci-icon">📍</div>
-          <div>
-            <div class="ci-label">Ubicación</div>
-            <div class="ci-val">San José, Costa Rica</div>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="ci-icon">📞</div>
-          <div>
-            <div class="ci-label">Teléfono</div>
-            <div class="ci-val">(506) 1234-5678</div>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="ci-icon">✉️</div>
-          <div>
-            <div class="ci-label">Email</div>
-            <div class="ci-val">info@renovacr.com</div>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="ci-icon">🕐</div>
-          <div>
-            <div class="ci-label">Horario</div>
-            <div class="ci-val">Lun – Sáb: 7am – 6pm</div>
-          </div>
-        </div>
+      <div class="plan-price-box">
+        <div class="plan-price-label">Inversión</div>
+        <div class="plan-price" style="font-size: 28px; line-height: 1.3;">iPhone 16 Plus<br><span style="font-size: 15px; color: var(--red); font-family: var(--font-body); font-weight: 700;">Desbloqueado · Condición perfecta</span></div>
       </div>
-    </div>
-    <div class="reveal reveal-delay-1">
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Nombre *</label>
-            <input type="text" placeholder="Tu nombre completo" required>
-          </div>
-          <div class="form-group">
-            <label>Teléfono *</label>
-            <input type="tel" placeholder="(506) ____-____" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="tu@email.com">
-        </div>
-        <div class="form-group">
-          <label>Servicio de interés</label>
-          <select>
-            <option value="">Selecciona un servicio</option>
-            <option>Arquitectura e Ingeniería</option>
-            <option>Construcción</option>
-            <option>Remodelaciones</option>
-            <option>Renovaciones</option>
-            <option>Instalaciones</option>
-            <option>Soldadura</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Mensaje</label>
-          <textarea placeholder="Cuéntanos sobre tu proyecto..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Enviar solicitud →</button>
-      </form>
-    </div>
-  </div>
-</section>
 
-<!-- DUDAS -->
-<section id="dudas">
-  <div class="reveal">
-    <p>¿Tienes dudas? Escríbenos directamente por WhatsApp y te respondemos al instante</p>
-    <a href="https://wa.me/50663023487?text=Hola,%20tengo%20una%20consulta" class="btn-wa" target="_blank">
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Enviar mensaje por WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">RENOVA<span>CR</span></div>
-      <p class="footer-desc">Transformamos espacios en experiencias de vida. Más de 10 años de confianza en Costa Rica.</p>
-      <div class="footer-social">
-        <a href="#" class="footer-soc-btn" title="Instagram">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="#" class="footer-soc-btn" title="Facebook">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="#" class="footer-soc-btn" title="TikTok">
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Servicios</h4>
-      <ul>
-        <li><a href="#servicios">Arquitectura</a></li>
-        <li><a href="#servicios">Construcción</a></li>
-        <li><a href="#servicios">Remodelaciones</a></li>
-        <li><a href="#servicios">Renovaciones</a></li>
-        <li><a href="#servicios">Instalaciones</a></li>
-        <li><a href="#servicios">Soldadura</a></li>
+      <ul class="plan-features">
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Acceso completo de por vida a tu página
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Sin mensualidades ni pagos futuros
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Soporte prioritario incluido
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          El iPhone debe estar desbloqueado y en perfecto estado
+        </li>
       </ul>
+
+      <a href="https://wa.me/50612345678?text=Hola!%20Quiero%20el%20Plan%20iPhone" class="plan-cta" target="_blank">
+        Me interesa este plan →
+      </a>
     </div>
-    <div class="footer-col">
-      <h4>Empresa</h4>
-      <ul>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+
+    <!-- PLAN 2: 6 meses (FEATURED) -->
+    <div class="plan-card featured">
+      <div class="plan-badge">Más popular</div>
+      <div class="plan-num">Plan 02</div>
+      <div class="plan-name">6 MESES</div>
+      <div class="plan-tagline">Prueba, gana, y decide si quieres más. Seis meses para demostrar que eres serio.</div>
+
+      <div class="plan-price-box">
+        <div class="plan-price-label">Inversión total</div>
+        <div class="plan-price">₡50.000</div>
+        <div class="plan-price-unit">colones · pago único</div>
+      </div>
+
+      <ul class="plan-features">
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#EF5350" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          180 días de acceso completo a tu página
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#EF5350" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Empieza a generar desde el día 1
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#EF5350" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Soporte activo incluido
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#EF5350" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Opción de renovar o pasar al plan anual
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#EF5350" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          ¿Qué pierdes si no lo intentas?
+        </li>
       </ul>
+
+      <a href="https://wa.me/50612345678?text=Hola!%20Quiero%20el%20Plan%206%20meses%20por%2050%20mil" class="plan-cta red" target="_blank">
+        Quiero mis 6 meses →
+      </a>
     </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul>
-        <li><a href="tel:+50663023487">(506) 1234-5678</a></li>
-        <li><a href="mailto:info@renovacr.com">info@renovacr.com</a></li>
-        <li><a href="#">San José, Costa Rica</a></li>
-        <li><a href="#">Lun–Sáb: 7am–6pm</a></li>
+
+    <!-- PLAN 3: 1 año -->
+    <div class="plan-card">
+      <div class="plan-badge gold">Mejor valor</div>
+      <div class="plan-num">Plan 03</div>
+      <div class="plan-name">1 AÑO</div>
+      <div class="plan-tagline">Los que ganan en serio no piensan en meses. Piensan en años. ¿Eres uno de ellos?</div>
+
+      <div class="plan-price-box">
+        <div class="plan-price-label">Inversión total</div>
+        <div class="plan-price">₡70.000</div>
+        <div class="plan-price-unit">colones · pago único · ahorrás ₡30.000</div>
+      </div>
+
+      <ul class="plan-features">
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          365 días de acceso completo sin interrupciones
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Doce meses para construir tu marca
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Soporte premium con prioridad total
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          El que siembra un año entero, cosecha en grande
+        </li>
+        <li>
+          <span class="feat-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#D32F2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Acceso a futuras actualizaciones incluido
+        </li>
       </ul>
+
+      <a href="https://wa.me/50612345678?text=Hola!%20Quiero%20el%20Plan%20Anual%20por%2070%20mil" class="plan-cta" target="_blank">
+        Juego al todo o nada →
+      </a>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-logo">RENOVACR</div>
-    <div>© 2026 Todos los derechos reservados · RenovaCR Costa Rica</div>
-  </div>
-</footer>
 
-<!-- BOTONES FLOTANTES -->
-<div class="float-container">
-  <div class="float-menu" id="floatMenu">
-    <a href="https://wa.me/50663023487" class="float-btn float-wa" target="_blank" data-label="WhatsApp">
-      <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-    <a href="tel:+50663023487" class="float-btn float-call" data-label="Llamar">
-      <svg width="22" height="22" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
-    <a href="#" class="float-btn float-ig" data-label="Instagram">
-      <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a href="#" class="float-btn float-fb" data-label="Facebook">
-      <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    </a>
-    <a href="#" class="float-btn float-tk" data-label="TikTok">
-      <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+  </div>
+</section>
+
+<!-- URGENCIA FINAL -->
+<section class="urgencia">
+  <div class="urgencia-pattern"></div>
+  <div class="urgencia-inner">
+    <div class="urgencia-tag">El momento es ahora</div>
+    <h2 class="urgencia-title">
+      EL QUE NO ACTÚA<br>
+      <em>NO GANA</em>
+    </h2>
+    <p class="urgencia-sub">
+      Cada día que pasa sin tu página, alguien más está tomando los clientes que podrían ser tuyos.
+      ¿Vas a seguir mirando o vas a entrar al juego hoy?
+    </p>
+    <a href="https://wa.me/50612345678?text=Hola!%20Quiero%20empezar%20ahora" class="urgencia-cta" target="_blank">
+      <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Quiero empezar ahora mismo
     </a>
   </div>
-  <button class="float-toggle" id="floatToggle" title="Contactar">
-    <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-</div>
+</section>
 
-<script>
-  // NAV scroll
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  // Mobile menu
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.add('open');
-  });
-  document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
-  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
-
-  // Headlines slider
-  const hlSlides = document.querySelectorAll('.hl-slide');
-  const hlDots = document.querySelectorAll('.hl-dot');
-  const questions = [
-    '¿Tu espacio necesita una transformación urgente?',
-    '¿Estás perdiendo valor por no remodelar?',
-    '¿Quieres un hogar moderno sin complicaciones?'
-  ];
-  let hlIdx = 0, qIdx = 0;
-
-  function nextHL() {
-    hlSlides[hlIdx].classList.remove('active');
-    hlDots[hlIdx].classList.remove('active');
-    hlIdx = (hlIdx + 1) % hlSlides.length;
-    hlSlides[hlIdx].classList.add('active');
-    hlDots[hlIdx].classList.add('active');
-  }
-  function nextQ() {
-    qIdx = (qIdx + 1) % questions.length;
-    document.getElementById('hlQuestion').textContent = questions[qIdx];
-  }
-  setInterval(nextHL, 2800);
-  setInterval(nextQ, 2200);
-
-  hlDots.forEach((dot, i) => dot.addEventListener('click', () => {
-    hlSlides[hlIdx].classList.remove('active');
-    hlDots[hlIdx].classList.remove('active');
-    hlIdx = i;
-    hlSlides[hlIdx].classList.add('active');
-    hlDots[hlIdx].classList.add('active');
-  }));
-
-  // Testimonios slider
-  let testiIdx = 0;
-  const track = document.getElementById('testiTrack');
-  const cards = track.querySelectorAll('.testimonio-card');
-  const isMob = () => window.innerWidth < 768;
-  function slideWidth() { return isMob() ? 100 : 33.333; }
-  function updateTesti() {
-    const w = isMob() ? track.parentElement.offsetWidth : track.parentElement.offsetWidth / 3;
-    track.style.transform = `translateX(-${testiIdx * (w + (isMob() ? 0 : 24))}px)`;
-  }
-  document.getElementById('testiPrev').addEventListener('click', () => { if (testiIdx > 0) { testiIdx--; updateTesti(); } });
-  document.getElementById('testiNext').addEventListener('click', () => { if (testiIdx < cards.length - (isMob() ? 1 : 3)) { testiIdx++; updateTesti(); } });
-  window.addEventListener('resize', updateTesti);
-
-  // Float toggle
-  document.getElementById('floatToggle').addEventListener('click', () => {
-    document.getElementById('floatMenu').classList.toggle('open');
-  });
-
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Form submit
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ ¡Solicitud enviada! Te contactaremos pronto.';
-    btn.style.background = '#2E7D32';
-    setTimeout(() => { btn.textContent = 'Enviar solicitud →'; btn.style.background = ''; e.target.reset(); }, 4000);
-  }
-</script>
 </body>
 </html>
